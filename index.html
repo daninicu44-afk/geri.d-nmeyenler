@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GERİ DÖNMEYENLER — Novela de Terror Digital | Los que nunca regresaron</title>
+  <meta name="description" content="Lee online GERİ DÖNMEYENLER (Los que nunca regresaron), una novela de terror psicológico inspirada en los misterios reales de Hinterkaifeck (1922) y el Paso Diátlov (1959)." />
+  <meta name="keywords" content="Geri Dönmeyenler, novela de terror online, Hinterkaifeck, Paso Diátlov, libro digital, korku romanı" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <canvas id="snow-canvas"></canvas>
+
+  <!-- Navegación Principal -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#inicio" class="brand-logo">
+        <span class="brand-dot"></span>
+        GERİ DÖNMEYENLER
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#inicio" data-i18n="navHome">Inicio</a></li>
+        <li><a href="#lector" data-i18n="navReader">Leer Libro</a></li>
+        <li><a href="#sobre-el-libro" data-i18n="navAbout">Sobre el Libro</a></li>
+        <li><a href="#personajes" data-i18n="navCharacters">Personajes</a></li>
+        <li><a href="#galeria" data-i18n="navGallery">Galería</a></li>
+        <li><a href="#contacto" data-i18n="navContact">Contacto</a></li>
+      </ul>
+
+      <div class="lang-switcher" aria-label="Selector de idioma">
+        <button class="lang-btn active" data-lang="es" onclick="window.novelApp.setLanguage('es')">ES</button>
+        <button class="lang-btn" data-lang="tr" onclick="window.novelApp.setLanguage('tr')">TR</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Portada / Hero Cinematográfico -->
+  <section id="inicio" class="hero">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow" data-i18n="eyebrow">Novela de Terror Psicológico y Misterio</div>
+        <h1 class="hero-title">GERİ DÖNMEYENLER</h1>
+        <p class="hero-subtitle" data-i18n="subtitle">Una novela de terror inspirada en dos misterios reales.</p>
+        <blockquote class="hero-quote" data-i18n="quote">
+          “Hay lugares donde la muerte no es el final. Es el comienzo de algo que jamás debió despertar.”
+        </blockquote>
+        <p class="hero-desc" data-i18n="heroDesc">
+          Dos tragedias reales separadas por treinta y siete años y miles de kilómetros: la granja aislada de Hinterkaifeck en 1922 y la expedición perdida del paso Diátlov en 1959. Una misma presencia silenciosa entre la nieve.
+        </p>
+        <div class="hero-actions">
+          <a href="#lector" class="btn-primary" data-i18n="btnRead">LEER LIBRO</a>
+          <a href="#misterios" class="btn-secondary" data-i18n="btnDiscover">DESCUBRIR LA HISTORIA</a>
+        </div>
+      </div>
+
+      <div class="book-cover-wrapper">
+        <div class="book-cover-card" id="official-book-cover">
+          <div class="cover-top-meta">1922 • 1959</div>
+          <div class="cover-center">
+            <div class="cover-emblem"><span>IX</span></div>
+            <h2 class="cover-title">GERİ DÖNMEYENLER</h2>
+            <p class="cover-sub">Los que nunca regresaron</p>
+          </div>
+          <div class="cover-bottom">EDICIÓN DIGITAL OFICIAL</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Los Dos Misterios Reales -->
+  <section id="misterios" class="section-block">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="mysteriesTag">Archivos Reales</span>
+      <h2 class="section-title" data-i18n="mysteriesTitle">Los Dos Misterios Que Inspiraron la Novela</h2>
+    </div>
+    <div class="mysteries-grid">
+      <article class="mystery-card">
+        <div class="mystery-year">31 DE MARZO DE 1922 — BAVIERA</div>
+        <h3 data-i18n="m1Title">La Granja de Hinterkaifeck</h3>
+        <p data-i18n="m1Desc">
+          En marzo de 1922, en una granja aislada de Baviera, Andreas Gruber descubrió huellas en la nieve que conducían desde el bosque hacia la casa, pero ninguna de regreso. Días después, toda la familia fue hallada sin vida.
+        </p>
+      </article>
+      <article class="mystery-card">
+        <div class="mystery-year">FEBRERO DE 1959 — MONTES URALES</div>
+        <h3 data-i18n="m2Title">El Incidente del Paso Diátlov</h3>
+        <p data-i18n="m2Desc">
+          En febrero de 1959, nueve experimentados montañeros liderados por Ígor Diátlov rasgaron su tienda desde el interior en mitad de la noche helada de los montes Urales y huyeron descalzos hacia la oscuridad.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Lector Digital Integrado -->
+  <section id="lector" class="section-block">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="readerTag">Edición Digital Interactiva</span>
+      <h2 class="section-title" data-i18n="readerTitle">Lector de la Novela</h2>
+    </div>
+
+    <div class="reader-shell" id="reader-shell">
+      <div class="reader-toolbar">
+        <div class="toolbar-group">
+          <button class="tool-btn" onclick="document.getElementById('toc-panel').classList.toggle('open')">☰ Índice (20 Capítulos)</button>
+          <select id="reader-chapter-select" class="chapter-select" onchange="window.novelApp.reader.goToChapter(this.value)"></select>
+        </div>
+
+        <div class="toolbar-group">
+          <button class="tool-btn" onclick="window.novelApp.reader.cycleFontSize()" title="Cambiar tamaño de letra">Aa</button>
+          <button class="tool-btn" onclick="window.novelApp.reader.toggleNightMode()" title="Modo nocturno / papel">◑ Modo</button>
+          <button class="tool-btn" onclick="window.novelApp.reader.toggleBookmark()" title="Guardar marcador">🔖 Marcar</button>
+          <button class="tool-btn" id="btn-ambient" onclick="window.novelApp.reader.toggleAmbientWind()" title="Viento ambiental opcional">❄ Viento</button>
+          <button class="tool-btn" onclick="window.novelApp.reader.toggleFullscreen()" title="Pantalla completa">⛶</button>
+        </div>
+      </div>
+
+      <!-- Tabla de Contenidos Desplegable -->
+      <div class="toc-panel" id="toc-panel">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">
+          <strong>Índice Oficial del Libro (Prólogo + 20 Capítulos)</strong>
+          <div id="bookmarks-list" style="display:flex;gap:0.4rem;flex-wrap:wrap;"></div>
+        </div>
+        <div class="toc-grid" id="toc-grid"></div>
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="reader-progress-fill"></div>
+      </div>
+
+      <!-- Libro Abierto -->
+      <div class="book-stage">
+        <div class="open-book" id="open-book">
+          <div class="book-page left-page" id="page-left"></div>
+          <div class="book-page right-page" id="page-right"></div>
+        </div>
+      </div>
+
+      <div class="reader-bottom-bar">
+        <button class="tool-btn" onclick="window.novelApp.reader.prevPage()">← Página Anterior</button>
+        <span class="reader-status" id="reader-status-text">Página 1</span>
+        <button class="tool-btn" onclick="window.novelApp.reader.nextPage()">Página Siguiente →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre el Libro -->
+  <section id="sobre-el-libro" class="section-block">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="aboutTag">La Obra</span>
+      <h2 class="section-title" data-i18n="aboutTitle">Sobre el Libro y su Estructura</h2>
+    </div>
+    <div class="info-card">
+      <p data-i18n="aboutText" style="max-width:75ch;color:var(--cold-blue-grey);">
+        GERİ DÖNMEYENLER (Los que nunca regresaron) es una novela de terror atmosférico estructurada en un Prólogo y 20 capítulos que entrelazan documentos, diarios y testimonios ficticios alrededor de dos de los enigmas sin resolver más inquietantes del siglo XX.
+      </p>
+    </div>
+  </section>
+
+  <!-- Personajes -->
+  <section id="personajes" class="section-block">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="charsTag">Protagonistas</span>
+      <h2 class="section-title" data-i18n="charsTitle">Personajes Principales</h2>
+    </div>
+    <div class="cards-grid">
+      <div class="info-card">
+        <h3>Andreas Gruber</h3>
+        <span class="info-role">Hinterkaifeck, 1922</span>
+        <p style="color:var(--cold-blue-grey);font-size:0.92rem;">Patriarca de la granja bávara. El primero en escuchar los pasos provenientes del ático y descubrir la fotografía imposible.</p>
+      </div>
+      <div class="info-card">
+        <h3>Ígor Diátlov</h3>
+        <span class="info-role">Montes Urales, 1959</span>
+        <p style="color:var(--cold-blue-grey);font-size:0.92rem;">Líder de la expedición soviética de nueve montañeros. Intenta mantener la calma racional mientras la nieve revela rastros inexplicables.</p>
+      </div>
+      <div class="info-card">
+        <h3>Yuri y Zinaída</h3>
+        <span class="info-role">Expedición Ural</span>
+        <p style="color:var(--cold-blue-grey);font-size:0.92rem;">Los primeros en percibir que algo observa el campamento desde la linde silenciosa del bosque helado.</p>
+      </div>
+      <div class="info-card">
+        <h3>El Hombre Sin Ojos</h3>
+        <span class="info-role">La Presencia</span>
+        <p style="color:var(--cold-blue-grey);font-size:0.92rem;">Una figura alta cubierta de escarcha que conecta ambos años y conoce el nombre de cada uno de los nueve.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section id="galeria" class="section-block">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="galleryTag">Escenarios</span>
+      <h2 class="section-title" data-i18n="galleryTitle">Archivo Visual de la Historia</h2>
+    </div>
+    <div class="cards-grid">
+      <div class="gallery-card">
+        <div class="gallery-visual"><span class="mystery-year">ARCHIVO I • 1922</span></div>
+        <div class="gallery-caption">
+          <h3>El Ático de Hinterkaifeck</h3>
+          <p style="color:var(--cold-blue-grey);font-size:0.88rem;">La silla colocada en el centro de la estancia oscura y la lámpara caída.</p>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-visual"><span class="mystery-year">ARCHIVO II • 1959</span></div>
+        <div class="gallery-caption">
+          <h3>La Ladera de Kholat Syakhl</h3>
+          <p style="color:var(--cold-blue-grey);font-size:0.88rem;">La caja metálica oxidada enterrada junto a la roca y la tienda rasgada desde dentro.</p>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-visual"><span class="mystery-year">ARCHIVO III • REVERSO</span></div>
+        <div class="gallery-caption">
+          <h3>La Fotografía de los Nueve</h3>
+          <p style="color:var(--cold-blue-grey);font-size:0.88rem;">El mensaje escrito en tinta negra que une Baviera con los Montes Urales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="section-block">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="contactTag">Correspondencia</span>
+      <h2 class="section-title" data-i18n="contactTitle">Contacto con el Autor</h2>
+    </div>
+    <form class="contact-form" onsubmit="event.preventDefault(); alert('Mensaje enviado al autor.'); this.reset();">
+      <div class="form-group">
+        <label>Nombre / İsim</label>
+        <input type="text" class="form-control" required />
+      </div>
+      <div class="form-group">
+        <label>Correo electrónico / E-posta</label>
+        <input type="email" class="form-control" required />
+      </div>
+      <div class="form-group">
+        <label>Mensaje / Mesaj</label>
+        <textarea class="form-control" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn-primary" data-i18n="sendBtn">Enviar Mensaje</button>
+    </form>
+  </section>
+
+  <!-- Pie de página -->
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="#inicio">GERİ DÖNMEYENLER</a>
+      <button onclick="document.getElementById('privacy-modal').classList.add('open')">Política de Privacidad</button>
+      <button onclick="window.novelApp.admin.openModal()">Panel de Autor</button>
+    </div>
+    <p>© 2026 GERİ DÖNMEYENLER — Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Modal Privacidad -->
+  <div class="modal-backdrop" id="privacy-modal">
+    <div class="modal-box" style="max-width:640px;">
+      <div class="modal-header">
+        <h3>Política de Privacidad</h3>
+        <button class="tool-btn" onclick="document.getElementById('privacy-modal').classList.remove('open')">✕</button>
+      </div>
+      <p style="color:var(--cold-blue-grey);font-size:0.92rem;">
+        Esta plataforma almacena únicamente el progreso de lectura, marcadores e idioma seleccionado de forma local en el navegador del lector (LocalStorage) para permitir continuar la lectura sin necesidad de crear cuentas ni recopilar datos personales externos.
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal Panel de Administración del Autor -->
+  <div class="modal-backdrop" id="admin-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Panel de Administración Editorial — GERİ DÖNMEYENLER</h3>
+        <button class="tool-btn" onclick="window.novelApp.admin.closeModal()">✕ Cerrar</button>
+      </div>
+
+      <div id="admin-login-view">
+        <form onsubmit="window.novelApp.admin.login(event)" style="max-width:360px;margin:1rem auto;">
+          <div class="form-group">
+            <label>Clave de Autor (por defecto: <code>19221959</code>)</label>
+            <input type="password" id="admin-password-input" class="form-control" required />
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">Acceder al Panel</button>
+        </form>
+      </div>
+
+      <div id="admin-dashboard-view" style="display:none;">
+        <div style="display:flex;gap:0.6rem;flex-wrap:wrap;margin-bottom:1.2rem;">
+          <button class="tool-btn" onclick="window.novelApp.admin.addNewChapter()">+ Añadir Capítulo</button>
+          <button class="tool-btn" onclick="window.novelApp.admin.exportBackupJSON()">⬇ Descargar Copia (.json)</button>
+          <label class="tool-btn" style="cursor:pointer;">
+            ⬆ Restaurar Copia (.json)
+            <input type="file" accept=".json" style="display:none;" onchange="window.novelApp.admin.importBackupJSON(this)" />
+          </label>
+        </div>
+
+        <div class="admin-grid">
+          <div class="admin-chapter-list" id="admin-chapters-list"></div>
+
+          <div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-bottom:0.8rem;">
+              <div class="form-group">
+                <label>Versión del Libro</label>
+                <input type="text" id="edit-book-version" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label>Portada Oficial (URL o Subir imagen)</label>
+                <div style="display:flex;gap:0.4rem;">
+                  <input type="text" id="edit-cover-url" class="form-control" placeholder="https://..." />
+                  <label class="tool-btn" style="cursor:pointer;">📁<input type="file" accept="image/*" style="display:none;" onchange="window.novelApp.admin.handleImageUpload(this, 'edit-cover-url')" /></label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label><input type="checkbox" id="edit-ch-published" /> Capítulo publicado y visible para lectores</label>
+            </div>
+
+            <div class="form-group">
+              <label>Ilustración de Escena del Capítulo (Opcional)</label>
+              <div style="display:flex;gap:0.4rem;">
+                <input type="text" id="edit-ch-illustration" class="form-control" placeholder="URL o subir archivo..." />
+                <label class="tool-btn" style="cursor:pointer;">📁<input type="file" accept="image/*" style="display:none;" onchange="window.novelApp.admin.handleImageUpload(this, 'edit-ch-illustration')" /></label>
+              </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+              <div>
+                <h4 style="margin-bottom:0.5rem;color:var(--paper-beige);">Español (ES)</h4>
+                <div class="form-group"><input type="text" id="edit-ch-title-es" class="form-control" placeholder="Título ES" /></div>
+                <div class="form-group"><input type="text" id="edit-ch-sub-es" class="form-control" placeholder="Fecha / Lugar ES" /></div>
+                <div class="form-group"><textarea id="edit-ch-content-es" class="form-control" rows="8" placeholder="Texto del capítulo en español..."></textarea></div>
+              </div>
+              <div>
+                <h4 style="margin-bottom:0.5rem;color:var(--paper-beige);">Turco (TR)</h4>
+                <div class="form-group"><input type="text" id="edit-ch-title-tr" class="form-control" placeholder="Başlık TR" /></div>
+                <div class="form-group"><input type="text" id="edit-ch-sub-tr" class="form-control" placeholder="Tarih / Konum TR" /></div>
+                <div class="form-group"><textarea id="edit-ch-content-tr" class="form-control" rows="8" placeholder="Bölüm metni (Türkçe)..."></textarea></div>
+              </div>
+            </div>
+
+            <div style="display:flex;justify-content:space-between;gap:0.8rem;margin-top:0.5rem;">
+              <button class="tool-btn" style="border-color:#82262e;" onclick="window.novelApp.admin.deleteSelectedChapter()">Eliminar Capítulo</button>
+              <button class="btn-primary" onclick="window.novelApp.admin.saveCurrentChapter()">Publicar Cambios</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="data/book-data.js"></script>
+  <script src="js/reader.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
